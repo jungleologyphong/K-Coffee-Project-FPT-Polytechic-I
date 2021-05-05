@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "221916694811",
+    "firebase_url": "https://king-food-19cc4.firebaseio.com",
+    "project_id": "king-food-19cc4",
+    "storage_bucket": "king-food-19cc4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:221916694811:android:f232eaa2836f773074ebbe",
+        "android_client_info": {
+          "package_name": "com.example.duan1"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "221916694811-quteur5v1oksgcag2p63o7uun1dll1te.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.duan1",
+            "certificate_hash": "f197e77f3f00bca37b2104ee50215d6354d5d157"
+          }
+        },
+        {
+          "client_id": "221916694811-e66ihrddova75n6oo2bh8gtnkpchru4f.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCCexoy7J6xO-PpR0FoEvWCyb3S0m1NM2Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "221916694811-e66ihrddova75n6oo2bh8gtnkpchru4f.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

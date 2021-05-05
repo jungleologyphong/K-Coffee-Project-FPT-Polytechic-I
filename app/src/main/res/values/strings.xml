@@ -1,0 +1,85 @@
+<resources>
+    <string name="app_name">DU_AN_1</string>
+    <string name="first_slide_title">WELCOME TO THE KING OF THE FOOD</string>
+    <string name="second_slide_title">CƠM GÀ</string>
+    <string name="third_slide_title">HUMBERGER</string>
+
+    <string name="first_slide_desc">Nhóm 2</string>
+    <string name="second_slide_desc">Có cơm và gà</string>
+
+    <string name="third_slide_desc">Có bánh mì và nhân</string>
+    <string name="welcom_king_food">WELCOM TO \n KING FOOD</string>
+
+    <!-- Home-->
+    <string name="fravorite_food">MÓN ĂN ƯA THÍCH</string>
+    <string name="id_food">Mã Đồ Ăn</string>
+    <string name="id_drink">Mã Đồ Uống</string>
+    <string name="name_drink">Tên Đồ Uống</string>
+    <string name="price_drink">Giá Tiền</string>
+    <string name="describe_drink">Mô Tả</string>
+    <string name="name_food">Tên Đồ Ăn</string>
+    <string name="price_food">Giá Tiền</string>
+    <string name="describe_food">Mô Tả</string>
+    <string name="save">Lưu</string>
+    <string name="cancel">Huỷ</string>
+    <string name="get_started">Get Started</string>
+    <string name="king_food">KING FOOD</string>
+    <string name="hint_username">Nhập tên tài khoản</string>
+    <string name="chb_remember_password">Nhớ mật khẩu</string>
+    <string name="btn_registration">Đăng ký</string>
+    <string name="btn_login">Đăng nhập</string>
+    <string name="com_ga">Cơm Gà</string>
+    <string name="seal_food">Khuyến mãi Giảm giá món ăn</string>
+    <string name="change_sale">THAY ĐỔI</string>
+    <string name="tien_mat">Tiền Mặt</string>
+    <string name="prince_oder">150.000</string>
+    <string name="oder">Oder</string>
+    <string name="dich_vu">Dịch Vụ</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="productSearch">Tìm kiếm</string>
+    <string name="userSearch">Tìm kiếm</string>
+
+
+    <string name="fullName">Họ tên</string>
+    <string name="id">ID</string>
+    <string name="email">Email</string>
+    <string name="phoneNumber">SĐT</string>
+    <string name="address">Địa chỉ</string>
+    <string name="status">Trạng thái</string>
+    <string name="food">Đồ ăn</string>
+    <string name="drink">Nước uống</string>
+    <string name="addToCart">Thêm vào giỏ</string>
+    <string name="buy">Mua ngay</string>
+    <string name="checkOut">Thanh toán</string>
+    <string name="productList">Danh sách sản phẩm</string>
+    <string name="total">Giá trị đơn hàng</string>
+    <string name="zero">0</string>
+    <string name="deliveryFee">Phí giao hàng</string>
+    <string name="serviceFee">Phí dịch vụ</string>
+    <string name="discount">Giảm giá</string>
+    <string name="subTotal">Tổng</string>
+    <string name="cartInfo">Thông tin giỏ hàng</string>
+    <string name="customerInfo">Thông tin khách hàng</string>
+    <string name="enterFullName">Nhập họ tên</string>
+    <string name="enterAddress">Nhập địa chỉ</string>
+    <string name="enterPhoneNumber">Nhập số điện thoại</string>
+    <string name="order">Đặt hàng</string>
+    <string name="paymentMethod">Phương thức thanh toán</string>
+    <string name="inviteFriends">Mời bạn bè</string>
+    <string name="supportCenter">Trung tâm trợ giúp</string>
+    <string name="settings">Cài đặt</string>
+    <string name="signOut">Đăng xuất</string>
+    <string name="enterEmail">Nhập email</string>
+    <string name="changePassword">Đổi mật khẩu</string>
+    <string name="enterOldPassword">Nhập mật khẩu cũ</string>
+    <string name="enterNewPassword">Nhập mật khẩu mới</string>
+    <string name="reEnterNewPassword">Nhập lại mật khẩu mới</string>
+    <string name="updateInfo">Cập nhật thông tin</string>
+    <string name="update">Cập nhật</string>
+    <string name="cancelled">Đã hủy</string>
+    <string name="ordered">Đã đặt</string>
+    <string name="totalCount">Tổng</string>
+    <string name="delivered">Đã giao</string>
+    <string name="productName">Tên sản phẩm</string>
+</resources>

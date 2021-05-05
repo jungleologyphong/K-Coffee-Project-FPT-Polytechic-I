@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp">
+
+    <ImageView
+        android:id="@+id/imgViewBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_arrow_back_black_24dp" />
+
+    <ImageView
+        android:id="@+id/imgViewCart"
+        android:layout_marginTop="8dp"
+        android:layout_width="50dp"
+        android:layout_height="30dp"
+        android:layout_below="@id/imgViewBack"/>
+    <TextView
+        android:id="@+id/tvOrder"
+        android:layout_marginTop="2dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/imgViewCart"
+        android:layout_below="@id/imgViewBack"
+        android:text="ORDER"
+        android:textSize="26sp"
+        android:textColor="@color/colorAccent"
+        android:textStyle="bold" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvSeles"
+        android:layout_width="match_parent"
+        android:layout_height="330dp"
+        android:layout_below="@id/tvOrder"
+        android:layout_marginTop="10dp">
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+    <com.github.mikephil.charting.charts.PieChart
+        android:id="@+id/selesChart"
+        android:layout_below="@+id/rvSeles"
+        android:layout_width="match_parent"
+        android:layout_height="280dp" />
+
+</RelativeLayout>

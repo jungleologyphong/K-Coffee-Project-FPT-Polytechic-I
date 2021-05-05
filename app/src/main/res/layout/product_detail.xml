@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="#FFFFFF"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <ImageView
+        android:id="@+id/ivBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:src="@drawable/ic_arrow_back_black_24dp" />
+
+    <ImageView
+        android:id="@+id/ivCart"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentRight="true"
+        android:src="@drawable/ic_cart" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/ivProduct"
+        android:layout_marginTop="50dp"
+        android:layout_centerHorizontal="true"
+        android:layout_width="250dp"
+        android:layout_height="225dp"
+        android:layout_below="@id/imgViewBack"/>
+
+    <TextView
+        android:id="@+id/tvName"
+        android:layout_marginTop="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ivProduct"
+        android:text="Cơm Gà Phan Đăng Lưu"
+        android:textSize="26sp"
+        android:textStyle="bold" />
+
+    <ImageView
+        android:id="@+id/ivLike"
+        android:layout_marginTop="25dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ivProduct"
+        android:layout_alignParentRight="true"
+        android:src="@drawable/ic_like" />
+
+    <RatingBar
+        android:id="@+id/ratingBar"
+        android:layout_width="245dp"
+        android:layout_height="40dp"
+        android:layout_below="@id/tvName"
+        android:layout_alignParentLeft="true"
+        android:layout_marginTop="8dp" />
+
+    <TextView
+        android:id="@+id/tvRating"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvName"
+        android:paddingTop="15dp"
+        android:layout_toRightOf="@+id/ratingBar"
+        android:text="2.3"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tvPhoneNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ratingBar"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:text="30.000đ"
+        android:textColor="#52c4d6"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tvEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvPhoneNumber"
+        android:layout_marginTop="24dp"
+        android:layout_marginBottom="16dp"
+        android:lineSpacingExtra="2dp"
+        android:text="Cơm gà là món ăn được chế biến và trình bày với hình thức cơm và thịt gà. Cơm có thể dùng là cơm trắng hoặc cơm chiên, cơm rang và thịt gà được trình bày thông thường là đùi gà hay cánh gà."
+        android:textSize="16dp" />
+
+    <Button
+        android:id="@+id/btnAddToCart"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:backgroundTint="#52c4d6"
+        android:text="ADD TO CART"
+        android:textSize="18dp"
+        android:textStyle="bold"/>
+
+</RelativeLayout>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.duan1">
+
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/background"
+        android:label="KingFood"
+        android:roundIcon="@mipmap/background"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".Activity.HomeUserActivity" />
+        <activity android:name=".ActivityAdmin.HomeAdminActivity" />
+        <activity android:name=".Activity.MessageChatActivity" />
+        <activity android:name=".LoginActivity" />
+        <activity android:name=".HelloActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".OnBoardingActivity" />
+        <activity android:name=".SignUpActivity" />
+    </application>
+
+</manifest>

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#FFFFFF"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/img_add_new_drink"
+        android:layout_width="175dp"
+        android:layout_height="150dp"
+        android:background="@drawable/ic_baseline_add_to_photos_24" />
+
+    <EditText
+        android:id="@+id/code_fd"
+        android:layout_width="@dimen/dp_300"
+        android:layout_height="@dimen/dp_50"
+        android:layout_marginTop="@dimen/dp_16"
+        android:background="@drawable/border"
+        android:hint="@string/id_food"
+        android:paddingLeft="@dimen/dp_5" />
+
+    <EditText
+        android:id="@+id/name_fd"
+        android:layout_width="@dimen/dp_300"
+        android:layout_height="@dimen/dp_50"
+        android:layout_marginTop="@dimen/dp_16"
+        android:background="@drawable/border"
+        android:hint="@string/name_food"
+        android:paddingLeft="@dimen/dp_5" />
+
+    <EditText
+        android:id="@+id/ed_price_fd"
+        android:layout_width="@dimen/dp_300"
+        android:layout_height="@dimen/dp_50"
+        android:layout_marginTop="@dimen/dp_16"
+        android:background="@drawable/border"
+        android:hint="@string/price_food"
+        android:paddingLeft="@dimen/dp_5" />
+
+    <EditText
+        android:id="@+id/ed_describe_fd"
+        android:layout_width="@dimen/dp_300"
+        android:layout_height="@dimen/dp_50"
+        android:layout_marginTop="@dimen/dp_16"
+        android:background="@drawable/border"
+        android:hint="@string/describe_food"
+        android:paddingLeft="@dimen/dp_5" />
+
+    <LinearLayout
+        android:id="@+id/button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/checkbox"
+        android:layout_marginTop="@dimen/dp_16"
+        android:orientation="horizontal">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_save_fd"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/dp_5"
+            android:layout_weight="1"
+            android:background="@drawable/button_background"
+            android:text="@string/save"
+            android:textColor="@color/Black" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_cancel_fd"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_5"
+            android:layout_weight="1"
+            android:background="@drawable/button_background"
+            android:text="@string/cancel"
+            android:textColor="@color/Black" />
+
+    </LinearLayout>
+
+</LinearLayout>
