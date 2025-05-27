@@ -7,7 +7,6 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -21,7 +20,9 @@ import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.FirebaseApp;
+import com.google.firebase.appcheck.BuildConfig;
 import com.google.firebase.appcheck.FirebaseAppCheck;
+import com.google.firebase.appcheck.debug.DebugAppCheckProviderFactory;
 import com.google.firebase.appcheck.playintegrity.PlayIntegrityAppCheckProviderFactory;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
@@ -32,7 +33,6 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.google.gson.Gson;
-
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -42,7 +42,6 @@ public class LoginActivity extends AppCompatActivity {
     TextInputLayout textInputLayout;
     FirebaseAuth firebaseAuth;
     DatabaseReference databaseReference;
-    CheckBox checkBox;
 
     public static void saveObjectToSharedPreference(Context context, String preferenceFileName, String serializedObjectKey, Object object) {
         SharedPreferences sharedPreferences = context.getSharedPreferences(preferenceFileName, 0);
@@ -74,15 +73,21 @@ public class LoginActivity extends AppCompatActivity {
         edtUsername = findViewById(R.id.edtUserName);
         edtPassword = findViewById(R.id.edtPassword);
         textInputLayout = findViewById(R.id.pass);
-        checkBox = findViewById(R.id.checkbox);
-        firebaseAuth = FirebaseAuth.getInstance();
-        databaseReference = FirebaseDatabase.getInstance().getReference("User");
 
         FirebaseApp.initializeApp(this);
-        FirebaseAuth.getInstance().setLanguageCode("en");
-        FirebaseAppCheck.getInstance().installAppCheckProviderFactory(
-                PlayIntegrityAppCheckProviderFactory.getInstance()
-        );
+        firebaseAuth = FirebaseAuth.getInstance();
+        firebaseAuth.setLanguageCode("vi");
+
+        databaseReference = FirebaseDatabase.getInstance().getReference("User");
+        if (BuildConfig.DEBUG) {
+            FirebaseAppCheck.getInstance().installAppCheckProviderFactory(
+                    DebugAppCheckProviderFactory.getInstance()
+            );
+        } else {
+            FirebaseAppCheck.getInstance().installAppCheckProviderFactory(
+                    PlayIntegrityAppCheckProviderFactory.getInstance()
+            );
+        }
 
         Bundle extras = getIntent().getExtras();
         if (extras != null) {
@@ -114,6 +119,7 @@ public class LoginActivity extends AppCompatActivity {
                             .addOnSuccessListener(new OnSuccessListener<AuthResult>() {
                                 @Override
                                 public void onSuccess(AuthResult authResult) {
+
                                     saveUser(email);
                                 }
 
@@ -223,7 +229,6 @@ public class LoginActivity extends AppCompatActivity {
         if (check) {
             edtUsername.setText(pref.getString("username", ""));
             edtPassword.setText(pref.getString("password", ""));
-            checkBox.setChecked(check);
         }
     }
 
