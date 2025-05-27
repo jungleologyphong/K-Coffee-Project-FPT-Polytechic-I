@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.duan1">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.example.duan1">
+
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
 
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
@@ -18,7 +21,8 @@
         <activity android:name=".ActivityAdmin.HomeAdminActivity" />
         <activity android:name=".Activity.MessageChatActivity" />
         <activity android:name=".LoginActivity" />
-        <activity android:name=".HelloActivity">
+        <activity android:name=".HelloActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

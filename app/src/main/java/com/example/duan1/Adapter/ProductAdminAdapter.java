@@ -63,7 +63,7 @@ public class ProductAdminAdapter extends RecyclerView.Adapter<ProductAdminAdapte
         holder.tvPrice.setText(df.format(product.getPrice()));
         holder.tvDescribe.setText(product.getDescribe());
         if (product.getImage() != null) {
-            Picasso.with(context).load(product.getImage()).into(holder.ivProduct);
+            Picasso.get().load(product.getImage()).into(holder.ivProduct);
         }
     }
 
@@ -132,7 +132,7 @@ public class ProductAdminAdapter extends RecyclerView.Adapter<ProductAdminAdapte
             //
             tvDrinkName.setText(product.getName());
             if (!product.getImage().isEmpty()) {
-                Picasso.with(context).load(product.getImage()).into(civDrink);
+                Picasso.get().load(product.getImage()).into(civDrink);
             }
             //
             tvView.setOnClickListener(new View.OnClickListener() {
@@ -166,7 +166,7 @@ public class ProductAdminAdapter extends RecyclerView.Adapter<ProductAdminAdapte
             TextView tvDescribe = bsdProductDetail.findViewById(R.id.tvDescribe);
             //
             if (!product.getImage().isEmpty()) {
-                Picasso.with(context).load(product.getImage()).into(sivProduct);
+                Picasso.get().load(product.getImage()).into(sivProduct);
             }
             tvName.setText(product.getName());
             tvCode.setText(product.getCode());

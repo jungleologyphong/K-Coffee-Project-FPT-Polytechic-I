@@ -55,19 +55,19 @@ public class MainCustomerFragment extends Fragment {
                 Fragment selectedFragment = null;
 
                 switch (item.getItemId()) {
-                    case R.id.nav_home:
+                    case 1:
                         ((HomeUserActivity) getActivity()).navPos = R.id.nav_home;
                         selectedFragment = new HomeFragment();
                         break;
-                    case R.id.nav_bill:
+                    case 2:
                         ((HomeUserActivity) getActivity()).navPos = R.id.nav_bill;
                         selectedFragment = new InvoiceFragment();
                         break;
-                    case R.id.nav_favorite:
+                    case 3:
                         ((HomeUserActivity) getActivity()).navPos = R.id.nav_favorite;
                         selectedFragment = new FavoriteFragment();
                         break;
-                    case R.id.nav_person:
+                    case 4:
                         ((HomeUserActivity) getActivity()).navPos = R.id.nav_person;
                         selectedFragment = new PersonFragment();
                         break;

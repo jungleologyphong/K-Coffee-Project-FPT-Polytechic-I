@@ -78,13 +78,13 @@ public class HomeAdminActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
-            case R.id.addFood:
+            case 1:
                 switchFragment(new AddProductFragment("Food"));
                 break;
-            case R.id.addDrink:
+            case 2:
                 switchFragment(new AddProductFragment("Drink"));
                 break;
-            case R.id.message:
+            case 3:
                 switchFragment(new MessageManageFragment());
                 break;
         }

@@ -50,7 +50,7 @@ public class ProductSearchAdapter extends RecyclerView.Adapter<ProductSearchAdap
         holder.tvPrice.setText(String.valueOf(product.getPrice()));
         holder.tvCode.setText(String.valueOf(product.getCode()));
         if (!product.getImage().isEmpty() && product.getImage() != null) {
-            Picasso.with(context).load(product.getImage()).into(holder.ivProduct);
+            Picasso.get().load(product.getImage()).into(holder.ivProduct);
         }
     }
 

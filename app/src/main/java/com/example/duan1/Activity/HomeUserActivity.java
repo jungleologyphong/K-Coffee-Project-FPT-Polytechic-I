@@ -26,6 +26,7 @@ import com.google.firebase.auth.FirebaseAuth;
 public class HomeUserActivity extends AppCompatActivity {
     public static User user;
     public int currentMenu = R.menu.cart;
+
     public Uri uri;
     FrameLayout flHome;
     Toolbar tHome;
@@ -69,7 +70,7 @@ public class HomeUserActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
-            case R.id.cart:
+            case 1:
                 switchFragment(new CartFragment());
                 break;
         }

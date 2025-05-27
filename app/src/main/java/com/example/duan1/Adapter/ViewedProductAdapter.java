@@ -1,5 +1,6 @@
 package com.example.duan1.Adapter;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -38,7 +39,7 @@ public class ViewedProductAdapter extends RecyclerView.Adapter<ViewedProductAdap
     }
 
     @Override
-    public void onBindViewHolder(@NonNull final ViewedProductViewholder holder, final int position) {
+    public void onBindViewHolder(@NonNull final ViewedProductViewholder holder, @SuppressLint("RecyclerView") final int position) {
         final Product product = list.get(position);
         holder.tvPrice.setText(String.valueOf(product.getPrice()));
         //
@@ -57,7 +58,7 @@ public class ViewedProductAdapter extends RecyclerView.Adapter<ViewedProductAdap
                                 viewedProductDAO.update(product);
                             }
                             if (item.getImage() != null) {
-                                Picasso.with(context).load(item.getImage()).into(holder.ivProduct);
+                                Picasso.get().load(item.getImage()).into(holder.ivProduct);
                             }
                         } else {
                             viewedProductDAO.delete(product.getId());

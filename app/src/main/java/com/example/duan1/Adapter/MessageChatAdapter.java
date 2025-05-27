@@ -86,7 +86,7 @@ public class MessageChatAdapter extends RecyclerView.Adapter {
         public SentMessageHolder(@NonNull View itemView) {
             super(itemView);
             message = (TextView)itemView.findViewById(R.id.message);
-            time = (TextView)itemView.findViewById(R.id.time);
+
             itemView.setOnClickListener(this);
         }
 
@@ -108,7 +108,7 @@ public class MessageChatAdapter extends RecyclerView.Adapter {
         public ReceivedMessageHolder(@NonNull View itemView) {
             super(itemView);
             message = (TextView)itemView.findViewById(R.id.message);
-            time = (TextView)itemView.findViewById(R.id.time);
+
             itemView.setOnClickListener(this);
         }
 

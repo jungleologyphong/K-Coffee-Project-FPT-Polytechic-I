@@ -62,9 +62,9 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.UserViewholder
         holder.tvPhoneNumber.setText(user.getPhoneNumber());
         holder.tvEmail.setText(user.getEmail());
         if (user.getImage() != null && !user.getImage().isEmpty()) {
-            Picasso.with(context).load(user.getImage()).into(holder.civUser);
+            Picasso.get().load(user.getImage()).into(holder.civUser);
         } else {
-            Picasso.with(context).load(R.drawable.testlogo).into(holder.civUser);
+            Picasso.get().load(R.drawable.testlogo).into(holder.civUser);
         }
 
 
@@ -139,9 +139,9 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.UserViewholder
                 tvStatus.setTextColor(context.getResources().getColor(R.color.Red));
             }
             if (!user.getImage().isEmpty()) {
-                Picasso.with(context).load(user.getImage()).into(civAvatar);
+                Picasso.get().load(user.getImage()).into(civAvatar);
             } else {
-                Picasso.with(context).load(R.drawable.testlogo).into(civAvatar);
+                Picasso.get().load(R.drawable.testlogo).into(civAvatar);
             }
             if (user.getStatus().equalsIgnoreCase("blocked")) {
                 btnUnBlock.setVisibility(View.VISIBLE);

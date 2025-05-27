@@ -105,7 +105,7 @@ public class AddProductFragment extends Fragment implements ProductDAO.InsertPro
         super.onResume();
         uri = ((HomeAdminActivity) getActivity()).uri;
         if (uri != null) {
-            Picasso.with(getContext()).load(uri).into(ivProduct);
+            Picasso.get().load(uri).into(ivProduct);
         }
         ((HomeAdminActivity) getActivity()).changeBackButton();
         if (type.equalsIgnoreCase("drink")) {

@@ -124,7 +124,7 @@ public class ProductDetailFragment extends Fragment implements ProductDAO.GetPro
     public void getProduct(Product product) {
         this.product = product;
         if (product.getImage() != null) {
-            Picasso.with(getContext()).load(product.getImage()).into(sivProduct);
+            Picasso.get().load(product.getImage()).into(sivProduct);
         } else {
             Log.e("X", "null");
         }

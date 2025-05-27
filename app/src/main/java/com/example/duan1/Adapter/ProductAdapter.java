@@ -42,7 +42,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
         holder.tvName.setText(product.getName());
         holder.tvPrice.setText(df.format(product.getPrice()));
         if (!product.getImage().isEmpty()) {
-            Picasso.with(context).load(product.getImage()).into(holder.ivProduct);
+            Picasso.get().load(product.getImage()).into(holder.ivProduct);
         }
     }
 

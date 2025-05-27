@@ -93,7 +93,7 @@ public class EditProductFragment extends Fragment implements ProductDAO.UpdatePr
         edtDescribe.setText(oldProduct.getDescribe());
         edtPrice.setText(String.valueOf(oldProduct.getPrice()));
         if (oldProduct.getImage() != null) {
-            Picasso.with(getContext()).load(oldProduct.getImage()).into(ivProduct);
+            Picasso.get().load(oldProduct.getImage()).into(ivProduct);
         }
     }
 
@@ -114,7 +114,7 @@ public class EditProductFragment extends Fragment implements ProductDAO.UpdatePr
         super.onResume();
         uri = ((HomeAdminActivity) getActivity()).uri;
         if (uri != null) {
-            Picasso.with(getContext()).load(uri).into(ivProduct);
+            Picasso.get().load(uri).into(ivProduct);
         }
         ((HomeAdminActivity) getActivity()).currentMenu = R.menu.blank;
         ((HomeAdminActivity) getActivity()).invalidateOptionsMenu();

@@ -101,9 +101,9 @@ public class PersonFragment extends Fragment {
         tvFullName.setText(user.getFullName());
         tvEmail.setText(user.getEmail());
         if (user.getImage() != null && !user.getImage().isEmpty()) {
-            Picasso.with(getContext()).load(user.getImage()).into(civAvatar);
+            Picasso.get().load(user.getImage()).into(civAvatar);
         } else {
-            Picasso.with(getContext()).load(R.drawable.testlogo).into(civAvatar);
+            Picasso.get().load(R.drawable.testlogo).into(civAvatar);
         }
     }
 
