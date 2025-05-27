@@ -3,6 +3,7 @@ package com.example.duan1.Activity;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -68,15 +69,12 @@ public class HomeUserActivity extends AppCompatActivity {
     }
 
     @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        switch (item.getItemId()) {
-            case 1:
-                switchFragment(new CartFragment());
-                break;
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getTitle().equals("Giỏ hàng")) {
+            switchFragment(new CartFragment());
         }
         return true;
     }
-
 
     public void switchFragment(Fragment fragment) {
         getSupportFragmentManager()

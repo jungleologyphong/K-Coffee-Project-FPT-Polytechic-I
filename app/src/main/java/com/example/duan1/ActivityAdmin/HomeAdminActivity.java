@@ -43,11 +43,7 @@ public class HomeAdminActivity extends AppCompatActivity {
         user = LoginActivity.getSavedObjectFromPreference(this, "User", "User", User.class);
 
         Log.e("User", user.toString());
-        getSupportFragmentManager()
-                .beginTransaction()
-                .setCustomAnimations(R.anim.slide_out_up, R.anim.slide_in_up, R.anim.slide_out_up, R.anim.slide_in_up)
-                .replace(R.id.flHomeAdmin, new MainAdminFragment())
-                .commit();
+        getSupportFragmentManager().beginTransaction().setCustomAnimations(R.anim.slide_out_up, R.anim.slide_in_up, R.anim.slide_out_up, R.anim.slide_in_up).replace(R.id.flHomeAdmin, new MainAdminFragment()).commit();
 
         setSupportActionBar(tHomeAdmin);
         getSupportActionBar().setTitle("Trang chủ");
@@ -61,12 +57,7 @@ public class HomeAdminActivity extends AppCompatActivity {
     }
 
     public void switchFragment(Fragment fragment) {
-        getSupportFragmentManager()
-                .beginTransaction()
-                .setCustomAnimations(R.anim.slide_out_up, R.anim.slide_in_up, R.anim.slide_out_up, R.anim.slide_in_up)
-                .replace(R.id.flHomeAdmin, fragment)
-                .addToBackStack(null)
-                .commit();
+        getSupportFragmentManager().beginTransaction().setCustomAnimations(R.anim.slide_out_up, R.anim.slide_in_up, R.anim.slide_out_up, R.anim.slide_in_up).replace(R.id.flHomeAdmin, fragment).addToBackStack(null).commit();
     }
 
     @Override
@@ -77,16 +68,14 @@ public class HomeAdminActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        switch (item.getItemId()) {
-            case 1:
-                switchFragment(new AddProductFragment("Food"));
-                break;
-            case 2:
-                switchFragment(new AddProductFragment("Drink"));
-                break;
-            case 3:
-                switchFragment(new MessageManageFragment());
-                break;
+        CharSequence title = item.getTitle();
+        Log.e("TAG", "onOptionsItemSelected: " +item.getTitle() );
+        if (title.equals("Thêm đồ ăn")) {
+            switchFragment(new AddProductFragment("Food"));
+        } else if (title.equals("Thêm nước uống")) {
+            switchFragment(new AddProductFragment("Drink"));
+        } else if (title.equals("Tin nhắn")) {
+            switchFragment(new MessageManageFragment());
         }
         return true;
     }

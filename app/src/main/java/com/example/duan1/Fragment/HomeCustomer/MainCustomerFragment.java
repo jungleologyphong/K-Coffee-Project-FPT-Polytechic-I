@@ -1,5 +1,6 @@
 package com.example.duan1.Fragment.HomeCustomer;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -15,10 +16,11 @@ import com.example.duan1.Activity.HomeUserActivity;
 import com.example.duan1.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-public class MainCustomerFragment extends Fragment {
+public class MainCustomerFragment extends Fragment  {
     BottomNavigationView bnvMain;
 
     public MainCustomerFragment() {
+        super();
     }
 
     @Override
@@ -45,44 +47,47 @@ public class MainCustomerFragment extends Fragment {
         if (((HomeUserActivity) getActivity()).navPos == 0) {
             loadFragment(new HomeFragment());
         }
+
         bnvMain.setSelectedItemId(((HomeUserActivity) getActivity()).navPos);
 
-
-        bnvMain.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-
-                Fragment selectedFragment = null;
-
-                switch (item.getItemId()) {
-                    case 1:
-                        ((HomeUserActivity) getActivity()).navPos = R.id.nav_home;
-                        selectedFragment = new HomeFragment();
-                        break;
-                    case 2:
-                        ((HomeUserActivity) getActivity()).navPos = R.id.nav_bill;
-                        selectedFragment = new InvoiceFragment();
-                        break;
-                    case 3:
-                        ((HomeUserActivity) getActivity()).navPos = R.id.nav_favorite;
-                        selectedFragment = new FavoriteFragment();
-                        break;
-                    case 4:
-                        ((HomeUserActivity) getActivity()).navPos = R.id.nav_person;
-                        selectedFragment = new PersonFragment();
-                        break;
-                }
-                loadFragment(selectedFragment);
-                return true;
-            }
+        bnvMain.setOnNavigationItemSelectedListener(item -> {
+            handleNavigation(item);
+            return true;
         });
     }
 
+
+    public void handleNavigation(MenuItem item) {
+        Fragment selectedFragment = null;
+
+        CharSequence title = item.getTitle();
+        if (title.equals("Trang chủ")) {
+            ((HomeUserActivity) getActivity()).navPos = R.id.nav_home;
+            selectedFragment = new HomeFragment();
+        } else if (title.equals("Hóa đơn")) {
+            ((HomeUserActivity) getActivity()).navPos = R.id.nav_bill;
+            selectedFragment = new InvoiceFragment();
+        } else if (title.equals("Yêu thích")) {
+            ((HomeUserActivity) getActivity()).navPos = R.id.nav_favorite;
+            selectedFragment = new FavoriteFragment();
+        } else if (title.equals("Cá nhân")) {
+            ((HomeUserActivity) getActivity()).navPos = R.id.nav_person;
+            selectedFragment = new PersonFragment();
+        }
+
+        loadFragment(selectedFragment);
+    }
+
+
     private void loadFragment(Fragment fragment) {
-        getChildFragmentManager()
-                .beginTransaction()
-                .replace(R.id.flMain, fragment)
-                .commit();
+        if (fragment != null && getActivity() != null) {
+            getActivity().getSupportFragmentManager()
+                    .beginTransaction()
+                    .replace(R.id.flMain, fragment)
+                    .commit();
+        } else {
+            Log.e("MainCustomerFragment", "loadFragment: Fragment hoặc Activity null");
+        }
     }
 
     @Override

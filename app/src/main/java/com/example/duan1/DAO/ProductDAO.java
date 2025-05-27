@@ -23,8 +23,13 @@ import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.StorageTask;
 import com.google.firebase.storage.UploadTask;
-
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
+
+import com.cloudinary.android.MediaManager;
+import com.cloudinary.android.callback.ErrorInfo;
+import com.cloudinary.android.callback.UploadCallback;
 
 public class ProductDAO {
     Context context;
@@ -189,48 +194,60 @@ public class ProductDAO {
         });
     }
 
+
+
     public void insertProduct(final Product product, Uri uri) {
         if (uri != null) {
-            StorageReference fileReference = storageReference.child(System.currentTimeMillis() + "." + getFileExtention(uri));
-            storageTask = fileReference.putFile(uri)
-                    .addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+            MediaManager.get().upload(uri)
+                    .option("resource_type", "image")
+                    .callback(new UploadCallback() {
                         @Override
-                        public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                            Task<Uri> urlTask = taskSnapshot.getStorage().getDownloadUrl();
-                            while (!urlTask.isSuccessful()) ;
-                            Uri downloadUrl = urlTask.getResult();
-                            product.setImage(downloadUrl.toString());
-                            databaseReference.push().setValue(product)
-                                    .addOnSuccessListener(new OnSuccessListener<Void>() {
-                                        @Override
-                                        public void onSuccess(Void aVoid) {
-                                            Toast.makeText(context, "Thanh cong", Toast.LENGTH_SHORT).show();
-                                            insertProductInterface.insertSuccess();
-                                        }
-                                    })
-                                    .addOnFailureListener(new OnFailureListener() {
-                                        @Override
-                                        public void onFailure(@NonNull Exception e) {
-                                            Toast.makeText(context, "That bai", Toast.LENGTH_SHORT).show();
-                                        }
-                                    });
+                        public void onStart(String requestId) {
+                            // Bắt đầu upload, có thể show progress
+                        }
 
-                        }
-                    })
-                    .addOnFailureListener(new OnFailureListener() {
                         @Override
-                        public void onFailure(@NonNull Exception e) {
-                            Toast.makeText(context, "That bai", Toast.LENGTH_SHORT).show();
+                        public void onProgress(String requestId, long bytes, long totalBytes) {
+                            // Cập nhật tiến trình nếu cần
                         }
-                    });
+
+                        @Override
+                        public void onSuccess(String requestId, Map resultData) {
+                            // Upload thành công, lấy URL ảnh trả về
+                            String imageUrl = (String) resultData.get("secure_url");
+                            product.setImage(imageUrl);
+
+                            // Lưu product vào database (Firebase Realtime Database hoặc Firestore)
+                            databaseReference.push().setValue(product)
+                                    .addOnSuccessListener(aVoid -> {
+                                        Toast.makeText(context, "Thành công", Toast.LENGTH_SHORT).show();
+                                        insertProductInterface.insertSuccess();
+                                    })
+                                    .addOnFailureListener(e -> {
+                                        Toast.makeText(context, "Thất bại", Toast.LENGTH_SHORT).show();
+                                    });
+                        }
+
+                        @Override
+                        public void onError(String requestId, ErrorInfo error) {
+                            Toast.makeText(context, "Upload thất bại: " + error.getDescription(), Toast.LENGTH_SHORT).show();
+                        }
+
+                        @Override
+                        public void onReschedule(String requestId, ErrorInfo error) {
+                            // Upload bị hoãn lại
+                        }
+                    }).dispatch();
         } else {
-            databaseReference.push().setValue(product).addOnSuccessListener(new OnSuccessListener<Void>() {
-                @Override
-                public void onSuccess(Void aVoid) {
-                    Toast.makeText(context, "Thanh cong", Toast.LENGTH_SHORT).show();
-                    insertProductInterface.insertSuccess();
-                }
-            });
+            // Không có ảnh, chỉ lưu product
+            databaseReference.push().setValue(product)
+                    .addOnSuccessListener(aVoid -> {
+                        Toast.makeText(context, "Thành công", Toast.LENGTH_SHORT).show();
+                        insertProductInterface.insertSuccess();
+                    })
+                    .addOnFailureListener(e -> {
+                        Toast.makeText(context, "Thất bại", Toast.LENGTH_SHORT).show();
+                    });
         }
     }
 

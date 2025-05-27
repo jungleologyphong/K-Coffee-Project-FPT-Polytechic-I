@@ -66,8 +66,6 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-
-
         btnLogin = findViewById(R.id.btnLogin);
         btnRegister = findViewById(R.id.btnRegister);
         edtUsername = findViewById(R.id.edtUserName);
@@ -119,10 +117,8 @@ public class LoginActivity extends AppCompatActivity {
                             .addOnSuccessListener(new OnSuccessListener<AuthResult>() {
                                 @Override
                                 public void onSuccess(AuthResult authResult) {
-
                                     saveUser(email);
                                 }
-
                             })
                             .addOnFailureListener(new OnFailureListener() {
                                 @Override

@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "217251266229",
+    "firebase_url": "https://k-food-4133b-default-rtdb.asia-southeast1.firebasedatabase.app",
     "project_id": "k-food-4133b",
     "storage_bucket": "k-food-4133b.firebasestorage.app"
   },
@@ -12,7 +13,12 @@
           "package_name": "com.example.duan1"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "217251266229-2vhe5nq43vqieohjkmbabf8q71k60dn1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyBdjQwpat_vG1dWBZnut97NovbKFtoiRqs"
@@ -20,7 +26,12 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "217251266229-2vhe5nq43vqieohjkmbabf8q71k60dn1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         }
       }
     }

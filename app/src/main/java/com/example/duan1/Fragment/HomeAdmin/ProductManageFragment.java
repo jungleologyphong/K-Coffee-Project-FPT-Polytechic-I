@@ -81,8 +81,6 @@ public class ProductManageFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-
-
     }
 
     @Override
@@ -90,7 +88,7 @@ public class ProductManageFragment extends Fragment {
         super.onResume();
         ((HomeAdminActivity) getActivity()).currentMenu = R.menu.product;
         getActivity().invalidateOptionsMenu();
-        ((HomeAdminActivity) getActivity()).getSupportActionBar().setTitle("Tin nhắn");
+        ((HomeAdminActivity) getActivity()).getSupportActionBar().setTitle("Sản phẩm");
         ((HomeAdminActivity) getActivity()).changeBackButton();
     }
 

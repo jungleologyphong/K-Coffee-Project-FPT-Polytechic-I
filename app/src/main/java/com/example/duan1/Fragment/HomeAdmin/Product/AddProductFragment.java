@@ -93,7 +93,7 @@ public class AddProductFragment extends Fragment implements ProductDAO.InsertPro
     }
 
     private boolean validate() {
-        if (edtName.getText().toString().isEmpty() || edtCode.getText().toString().isEmpty() || edtPrice.getText().toString().isEmpty() || uri == null) {
+        if (edtName.getText().toString().isEmpty() || edtCode.getText().toString().isEmpty() || edtPrice.getText().toString().isEmpty()) {
             Toast.makeText(getContext(), "Các trường không được để trống", Toast.LENGTH_SHORT).show();
             return false;
         }

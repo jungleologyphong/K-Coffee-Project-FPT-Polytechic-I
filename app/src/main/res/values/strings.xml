@@ -1,4 +1,8 @@
 <resources>
+    <string name="cloudinary_url">cloudinary://941754653476593:ZdJeRUFX1AQzxmi8EWrkLh_y58w@dtrhc6tvi</string>
+    <string name="cloudinary_name">dtrhc6tvi</string>
+    <string name="cloudinary_secretKey">ZdJeRUFX1AQzxmi8EWrkLh_y58w</string>
+    <string name="cloudinary_apiKey">941754653476593</string>
     <string name="app_name">DU_AN_1</string>
     <string name="first_slide_title">WELCOME TO THE KING OF THE FOOD</string>
     <string name="second_slide_title">CƠM GÀ</string>
